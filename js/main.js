@@ -44,7 +44,7 @@ cameraTrigger.onclick = function () {
   cameraOutput.classList.add("taken");
 };
 
-camaraSwitcher.onclick = function(){
+trocarCamare.onclick = function(){
   stpoMediaTracks(cameraView.srcObject);
   camMode = camMode === "user" ? "environment" : "user";
   constraints = {video: {facingMode: camMode }, audio:

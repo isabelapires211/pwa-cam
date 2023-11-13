@@ -19,7 +19,7 @@ var constraints = { video: { facingMode: camMode }, audio: false };
 const cameraView = document.querySelector("#camera--view"),
   cameraOutput = document.querySelector("#camera--output"),
   cameraSensor = document.querySelector("#camera--sensor"),
-  cameraTrigger = document.querySelector("#camera--trigger")
+  cameraTrigger = document.querySelector("#camera--trigger"),
   trocarCamare = document.querySelector("#trocar--camare")
 
 //Estabelecendo o acesso a camera e inicializando a visualização
@@ -44,11 +44,22 @@ cameraTrigger.onclick = function () {
   cameraOutput.classList.add("taken");
 };
 
+camaraSwitcher.onclick = function(){
+  stpoMediaTracks(cameraView.srcObject);
+  camMode = camMode === "user" ? "environment" : "user";
+  constraints = {video: {facingMode: camMode }, audio:
+  false};
+  console.log(constraints)
+  cameraStart();
+}
+
 function stpoMediaTracks(stream){
   stream.getTracks().forEach(track => {
     track.stop();
   });
 }
+
+
 
 // carrega imagem de camera quando a janela carregar
 window.addEventListener("load", cameraStart, false);

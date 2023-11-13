@@ -27,9 +27,10 @@ html, body{
       position: fixed;
       bottom: 30px;
       left: calc(50% - 100px);
+
   }
 
-  #Trocar--camare{
+  #trocar--camare{
       width: 200px;
       background-color: black;
       color: white;

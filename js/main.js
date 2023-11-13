@@ -14,7 +14,7 @@ if ('serviceWorker' in navigator) {
 var camMode ="user";
 
 // configurando as constraintes do video stream
-var constraints = { video: { facingMode: "camMode" }, audio: false };
+var constraints = { video: { facingMode: camMode }, audio: false };
 // capturando os elementos em tela
 const cameraView = document.querySelector("#camera--view"),
   cameraOutput = document.querySelector("#camera--output"),
@@ -43,5 +43,12 @@ cameraTrigger.onclick = function () {
   cameraOutput.src = cameraSensor.toDataURL("image/webp");
   cameraOutput.classList.add("taken");
 };
+
+function stpoMediaTracks(stream){
+  stream.getTracks().forEach(track => {
+    track.stop();
+  });
+}
+
 // carrega imagem de camera quando a janela carregar
 window.addEventListener("load", cameraStart, false);

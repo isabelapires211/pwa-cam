@@ -23,6 +23,7 @@ html, body{
       border: none;
       margin-right: 600px;
       padding: 15px 20px;
+    
       text-align: center;
       box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
       position: fixed;
@@ -38,10 +39,11 @@ html, body{
     border-radius: 30px;
     border: none;
     padding: 15px 20px;
-    margin-left: 300px;
+    text-align: center;
+
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     left: calc(50% - 100px);
 }
   .taken{
